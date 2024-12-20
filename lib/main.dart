@@ -14,7 +14,7 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Layout',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 183, 108, 58)),
         useMaterial3: true,
       ),
       home: const HomePage(title: 'Meu layout'),
@@ -39,16 +39,54 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: const Center(
-        child: Text(
-          'You have pushed the button this many times:',
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(10),
+                child: const Text(
+                  'Faça uma escolha!',
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.all(8),
+                child: const Text(
+                  'Escolha uma opção abaixo:',
+                  style: TextStyle(fontSize: 16),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 5),
+                width: 200,
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: const Text('Macarrão com ketchup 🍝'),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 5),
+                width: 200,
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: const Text('Batata frita com sorvete 🍟'),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 5),
+                width: 200,
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: const Text('Pizza de chocolate 🍕'),
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
+      );
   }
 }
